@@ -1,0 +1,20 @@
+Sub Calcular(Valor1 As Range, Valor2 As Range, Operacion As String)
+Dim Mensaje As String
+Dim Resultado As Long
+    
+    If IsNumeric(Valor1) = True And IsNumeric(Valor2) Then
+        Mensaje = "El resultado de "
+        Select Case Operacion
+            Case "+":
+                Resultado = Valor1 + Valor2
+                Mensaje = Mensaje & "sumar " & Valor1 & " más " & Valor2 & " es " & Resultado & " ."
+            Case "-":
+                Resultado = Valor1 - Valor2
+                Mensaje = Mensaje & "restar " & Valor1 & " menos " & Valor2 & " es " & Resultado & " ."
+        End Select
+    Else
+        Mensaje = "Revisa los datos, deben ser datos numéricos."
+    End If
+          
+    MsgBox Mensaje, vbInformation
+End Sub
